@@ -20,5 +20,6 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('index/', views.index),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    path('pdf/', views.OpenApITextExtractionAPI.as_view())
+    path('pdf-openai/', views.OpenApITextExtractionAPI.as_view()),
+    path('pdf-pytesseract/', views.TextExtractionAPI.as_view())
 ]
