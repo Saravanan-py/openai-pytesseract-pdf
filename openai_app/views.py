@@ -43,8 +43,9 @@ class OpenApITextExtractionAPI(CreateAPIView):
             # Extract file paths and process in a thread pool
             file_paths = [file['pdf'] for file in serialized_files]
             results = process_pdfs_and_query_wrapper(file_paths)
-
             extracted_text = ''.join(results)
+            for i in file_paths:
+                os.remove(i)
 
             print(extracted_text)
             data = {
