@@ -7,7 +7,7 @@ from PIL import Image
 import concurrent.futures
 
 # Set your OpenAI API key
-openai.api_key = ''
+openai.api_key = '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'
 
 
 def extract_text_from_base64_pdf(base64_content):
